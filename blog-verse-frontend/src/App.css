@@ -149,7 +149,46 @@ About Section
 	margin: auto;
 	font-size: 3em;
 }
+/*===============================================
+	Articles List and ArtList Section
+=================================================*/
 
+.article-container {
+	display: flex;
+	padding: 1em;
+	justify-content: center;
+}
+
+.article-container a {
+	text-decoration: none;
+	color: white;
+}
+
+.article-list-title {
+	color: white;
+	text-align: center;
+	margin-top: 20px;
+	border-bottom: 1px solid white;
+}
+
+.article-info:nth-child(odd) {
+	background-color: rgb(81, 77, 77);
+}
+.article-info-item {
+	padding: 1em;
+	margin-bottom: 20px;
+	width: 700px;
+	font-size: 1rem;
+	font-family: "Poppins", sans-serif;
+}
+.article-info-item h3,
+p {
+	margin: 0;
+	padding: 0.4em;
+}
+.article-info-item h3{
+	font-size: 1.6rem;
+}
 /* Media Queries */
 @media screen and (max-width: 768px) {
 	.main-logo {
@@ -179,6 +218,12 @@ About Section
 
 	.hero-footer {
 		font-size: 2em;
+		width: 80%;
+	}
+
+	.article-info-item {
+		padding: 1.3em;
+		margin-bottom: 20px;
 		width: 80%;
 	}
 }
