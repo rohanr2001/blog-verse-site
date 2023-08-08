@@ -1,0 +1,184 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Playfair+Display:wght@600&family=Poppins:wght@400;500&family=REM:wght@900&display=swap");
+* {
+	box-sizing: border-box;
+}
+body {
+	background-color: black;
+	margin: 0;
+	font-family: "Poppins", sans-serif;
+}
+
+.main-logo {
+	margin: 0;
+	margin-right: auto;
+	font-size: 30px;
+}
+
+.left,
+.right {
+	font-family: "Playfair Display", serif;
+	border: 2px solid white;
+	padding: 5px;
+}
+
+.right {
+	color: black;
+	background-color: white;
+	border: 2px solid rgb(255, 0, 0);
+}
+
+/*
+==================
+Navbar
+==================
+*/
+.sandwich-icon {
+	display: none; /* Hide the sandwich icon by default */
+	font-size: 1.8em;
+	cursor: pointer;
+}
+nav {
+	display: flex;
+	background-color: black;
+	color: white;
+	padding: 1em;
+	justify-content: space-between;
+	align-items: center;
+	margin: 1em;
+}
+.list {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	display: flex;
+	align-items: center;
+}
+
+nav a {
+	text-decoration: none;
+	color: white;
+}
+
+.list-item {
+	color: white;
+	margin-right: 1.5em;
+	padding: 0.5em 1em;
+	border: 2px solid white;
+	transition: background-color 0.3s ease, color 0.3s ease, font-weight 0.3s ease;
+}
+
+.list-item:hover {
+	background-color: white;
+	color: black;
+	font-weight: bold;
+}
+
+/*
+==============================================
+Hero Section
+==============================================
+*/
+
+.home-container {
+	background-image: url("./image1.jpg");
+	background-size: cover;
+	background-position: center;
+}
+
+.hero-section {
+	font-size: 4.4em;
+	max-width: 600px;
+	margin: 40px 0px 0px 80px;
+	font-family: "REM", sans-serif;
+	border: 10px solid black;
+	box-shadow: 0.5rem 0.5rem rgb(143, 143, 143), -0.5rem -0.5rem #ccc;
+	background-color: white;
+}
+
+.hero-title {
+	color: white;
+	background-color: black;
+	padding: 8px;
+	border: 2px solid white;
+}
+/*
+==================================
+About Section
+==================================
+*/
+.about {
+	color: white;
+	display: flex;
+	flex-direction: column;
+	margin: 5%;
+}
+
+.about-title {
+	font-family: "REM", sans-serif;
+	color: black;
+	font-size: 3em;
+	max-width: 400px;
+	background-color: white;
+}
+
+.about-content {
+	display: flex;
+	flex-wrap: wrap;
+	margin-bottom: 1em;
+}
+
+.sub-content {
+	margin: 30px;
+	padding: 10px;
+	width: 500px;
+	font-size: 1.2em;
+	border: 2px solid white;
+	height: fit-content;
+	font-family: "Poppins", sans-serif;
+}
+
+.second-content {
+	justify-content: flex-end;
+}
+
+.hero-footer {
+	font-family: "REM", sans-serif;
+
+	width: 50%;
+	text-align: center;
+	margin: auto;
+	font-size: 3em;
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+	.main-logo {
+		font-size: 1.3em;
+		margin-right: auto;
+	}
+
+	.list-item {
+		font-size: 0.7em;
+		margin-right: 1em;
+	}
+
+	.hero-section {
+		font-size: 2.7em;
+		max-width: 100%;
+		margin: 1em;
+	}
+
+	.about-title {
+		font-size: 2em;
+	}
+
+	.sub-content {
+		margin: 1em;
+		font-size: 1em;
+	}
+
+	.hero-footer {
+		font-size: 2em;
+		width: 80%;
+	}
+}
