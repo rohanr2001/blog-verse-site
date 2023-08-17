@@ -117,7 +117,7 @@ app.post("/api/articles/:name/comment", async (req, res) => {
 			{ $push: { comment: { postedBy: email, text } } }
 		);
 
-		const article = await articleCollection.findOne({ name: name });
+		const article = await articleCollection.findOne({ name });
 		if (article) {
 			res.json(article);
 		} else {
