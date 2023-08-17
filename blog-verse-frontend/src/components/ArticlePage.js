@@ -11,7 +11,9 @@ export default function ArticlePage() {
 	const [articleInfo, setArticleInfo] = useState({
 		upvote: 0,
 		comment: [],
+		canUpvote: false,
 	});
+	const { canUpvote } = articleInfo;
 	const { articleId } = useParams();
 
 	const { user, isLoading } = useUser();
@@ -25,10 +27,10 @@ export default function ArticlePage() {
 			});
 			setArticleInfo(response.data);
 		}
-		if (isLoading) {
+		if (!isLoading) {
 			loadArticleInfo();
 		}
-	}, []);
+	}, [isLoading, user]);
 
 	const article = articles.find((article) => article.name === articleId);
 
@@ -54,7 +56,7 @@ export default function ArticlePage() {
 			<div className="upvotes-container">
 				{user ? (
 					<button className="list-item" onClick={addUpvote}>
-						Upvote
+						{canUpvote ? "Upvote" : "Already Upvoted"}
 					</button>
 				) : (
 					<button className="list-item">Login to Upvote</button>

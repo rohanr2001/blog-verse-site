@@ -300,6 +300,10 @@ input {
 		rgba(119, 118, 118, 1) 100%
 	);
 }
+
+.not-found {
+	color: white;
+}
 /* Media Queries */
 @media screen and (max-width: 768px) {
 	.main-logo {
