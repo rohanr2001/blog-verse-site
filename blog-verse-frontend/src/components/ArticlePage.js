@@ -11,10 +11,8 @@ export default function ArticlePage() {
 	const [articleInfo, setArticleInfo] = useState({
 		upvote: 0,
 		comment: [],
-		canUpVote: false,
 	});
 	const { articleId } = useParams();
-	const { canUpVote } = articleInfo;
 
 	const { user, isLoading } = useUser();
 
@@ -30,7 +28,7 @@ export default function ArticlePage() {
 		if (isLoading) {
 			loadArticleInfo();
 		}
-	}, [isLoading, user]);
+	}, []);
 
 	const article = articles.find((article) => article.name === articleId);
 
@@ -55,8 +53,8 @@ export default function ArticlePage() {
 			<h1 className="article-title">{article.title}</h1>
 			<div className="upvotes-container">
 				{user ? (
-					<button className = "list-item"onClick={addUpvote}>
-						{canUpVote ? "Upvote" : "Already Voted"}
+					<button className="list-item" onClick={addUpvote}>
+						Upvote
 					</button>
 				) : (
 					<button className="list-item">Login to Upvote</button>
@@ -66,12 +64,12 @@ export default function ArticlePage() {
 					This Article is Upvoted By : <b>{articleInfo.upvote}</b> Readers
 				</p>
 			</div>
+			<div className="article-para">
+				{article.content.map((para) => (
+					<p key={para}>{para}</p>
+				))}
+			</div>
 
-			{article.content.map((para) => (
-				<p className="article-para" key={para}>
-					{para}
-				</p>
-			))}
 			{user ? (
 				<AddCommentForm
 					articleName={articleId}

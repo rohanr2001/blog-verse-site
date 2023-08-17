@@ -19,23 +19,27 @@ export default function LoginPage() {
 	}
 
 	return (
-		<>
-			<h1>Welcome to the login page</h1>
-			{error && <p className="error">{error}</p>}
-			<input
-				type="text"
-				placeholder="Your Email Address"
-				value={email}
-				onChange={(e) => setEmail(e.target.value)}
-			/>
-			<input
-				type="password"
-				placeholder="Password"
-				value={password}
-				onChange={(e) => setPassword(e.target.value)}
-			/>
-			<button onClick={logIn}>Login</button>
-			<Link to="/create-account">Don't have an account? Create One here!</Link>
-		</>
+		<div className="login-container">
+			<div className="login-sub-container">
+				<h1 className="login-title">Welcome Back</h1>
+				{error && <p className="error">{error}</p>}
+				<input
+					type="text"
+					placeholder="Your Email Address"
+					value={email}
+					onChange={(e) => setEmail(e.target.value)}
+				/>
+				<input
+					type="password"
+					placeholder="Password"
+					value={password}
+					onChange={(e) => setPassword(e.target.value)}
+				/>
+				<button onClick={logIn} className="list-item">Login</button>
+				<Link to="/create-account" className="goto-link">
+					Don't have an account? Create One here!
+				</Link>
+			</div>
+		</div>
 	);
 }

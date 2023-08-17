@@ -198,6 +198,7 @@ p {
 }
 .article-para {
 	font-size: 1.1rem;
+	margin-bottom: 30px;
 }
 .article-title {
 	border-bottom: 2px solid white;
@@ -222,7 +223,7 @@ button {
 /*===========================================
 Comment Section
 ============================================*/
-.comment-container h3,
+h3,
 p,
 h4,
 h3 {
@@ -241,9 +242,63 @@ h3 {
 input {
 	font-size: 15px;
 }
-.comment{
+.comment {
 	border-bottom: 1px solid white;
 	padding: 15px;
+}
+
+/*=================================================
+Login Style
+===================================================*/
+.login-title {
+	color: rgb(0, 0, 0);
+	font-weight: bolder;
+	text-align: center;
+}
+.login-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 80vh;
+}
+.login-sub-container {
+	background: rgb(255, 255, 255);
+	background: linear-gradient(
+		90deg,
+		rgba(255, 255, 255, 1) 0%,
+		rgba(143, 153, 184, 1) 50%,
+		rgba(0, 0, 0, 1) 100%
+	);
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+	border: 2px solid rgb(141, 198, 226);
+	padding: 70px;
+	box-shadow: 0.5rem 0.5rem rgb(118, 113, 187), -0.5rem -0.5rem #b6b6b6;
+}
+input {
+	padding: 10px;
+	border-radius: 5px;
+}
+.goto-link {
+	color: rgb(21, 18, 18);
+	font-weight: 500;
+}
+.error {
+	border: 1px solid white;
+	padding: 5px;
+	background-color: #ccc;
+	color: black;
+	font-weight: 500;
+}
+.signup {
+	background: rgb(229, 93, 93);
+	background: linear-gradient(
+		90deg,
+		rgba(229, 93, 93, 1) 0%,
+		rgba(184, 143, 156, 1) 50%,
+		rgba(119, 118, 118, 1) 100%
+	);
 }
 /* Media Queries */
 @media screen and (max-width: 768px) {
