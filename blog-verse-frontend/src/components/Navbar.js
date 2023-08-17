@@ -1,7 +1,9 @@
-import { Link } from "react-router-dom";
-
-
+import { Link, useNavigate } from "react-router-dom";
+import useUser from "../hooks/useUser";
+import { getAuth, signOut } from "firebase/auth";
 export default function NavBar() {
+	const { user } = useUser();
+	const navigate = useNavigate();
 	const pages = [
 		{
 			name: "Home",
@@ -29,7 +31,28 @@ export default function NavBar() {
 				<span className="left">BLOG</span>
 				<span className="right">VERSE</span>
 			</h1>
-			<ul className="list">{listItems}</ul>
+			<ul className="list">
+				{listItems}{" "}
+				<li className="list-item">
+					{user ? (
+						<button
+							onClick={() => {
+								signOut(getAuth());
+							}}
+						>
+							Logout
+						</button>
+					) : (
+						<button
+							onClick={() => {
+								navigate("/login");
+							}}
+						>
+							Login
+						</button>
+					)}
+				</li>
+			</ul>
 		</nav>
 	);
 }
