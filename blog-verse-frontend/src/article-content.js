@@ -1,6 +1,6 @@
 export const articles = [
 	{
-		name: `react`,
+		name: `future-of-ai`,
 		title: `The Future of Artificial Intelligence`,
 		author: `Sarah Johnson`,
 		content: [
@@ -11,25 +11,24 @@ export const articles = [
 		],
 	},
 	{
-		name: `Python`,
-		title: `The Importance of Mindfulness Meditation`,
-		author: `John Smith`,
-		content: [
-			`In today's fast-paced world, stress and anxiety have become commonplace. Mindfulness meditation offers a valuable tool to cope with these challenges and improve overall well-being. By bringing one's attention to the present moment without judgment, mindfulness helps in reducing stress, enhancing self-awareness, and fostering a sense of inner peace.`,
-			`Numerous studies have shown the physical and mental health benefits of mindfulness meditation. It can lower blood pressure, improve sleep quality, and boost immune function. Additionally, practicing mindfulness can enhance emotional intelligence and increase empathy towards others.`,
-			`Incorporating mindfulness into daily life can be achieved through simple practices like mindful breathing, body scans, or mindful eating. Regular meditation sessions, even for just a few minutes each day, can make a significant difference in one's overall health and happiness.`,
-			`In summary, mindfulness meditation is a powerful practice that promotes well-being and emotional balance. By dedicating time to be present in the moment, individuals can cultivate a deeper connection with themselves and the world around them.`,
-		],
-	},
-	{
-		name: `Java`,
+		name: `ancient-ruins`,
 		title: `Exploring Ancient Ruins: Unraveling the Mysteries of Machu Picchu`,
 		author: `Emily Roberts`,
 		content: [
-			`Perched high in the Andes Mountains of Peru, Machu Picchu is an ancient Incan citadel that continues to captivate the world with its mysterious allure. Believed to have been built in the 15th century, its exact purpose and the reason for its abandonment remain a subject of debate among archaeologists and historians.`,
 			`The site's stunning architecture and intricate stone masonry reflect the ingenuity of the Incan civilization. The Intihuatana, a stone sundial, and the Temple of the Sun are among the notable structures that add to Machu Picchu's enigma.`,
 			`Today, Machu Picchu stands as a UNESCO World Heritage site and attracts millions of visitors annually. To preserve its delicate ecosystem and protect its cultural significance, measures have been implemented to limit tourist footfall and manage the site sustainably.`,
 			`Visiting Machu Picchu offers not only a chance to witness a marvel of ancient engineering but also an opportunity to connect with history and marvel at the breathtaking Andean landscapes that surround this iconic archaeological wonder.`,
+		],
+	},
+	{
+		name: "enchanting-temples",
+		title: "The Enchanting Temples of Angkor Wat",
+		author: "David Thompson",
+		content: [
+			"Exploring the intricate temples and stunning architecture of Angkor Wat, a UNESCO World Heritage site.",
+			"The grandeur of structures like Bayon and Ta Prohm, where nature and architecture merge.",
+			"The cultural and historical significance of Angkor Wat in Cambodian history.",
+			"Efforts to preserve the temples and promote sustainable tourism to this awe-inspiring destination.",
 		],
 	},
 ];
