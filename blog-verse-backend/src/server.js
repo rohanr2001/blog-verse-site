@@ -14,6 +14,15 @@ app.get("/api/articles/:name", async (req, res) => {
 	}
 });
 
+app.get("/api/articles", async (req, res) => {
+	const articles = await articleCollection.find().toArray();
+	if (articles) {
+		res.json(articles);
+	} else {
+		res.send([]);
+	}
+});
+
 app.put("/api/addArticle/:name", async (req, res) => {
 	//Adding a new article endpoint
 	const { name } = req.params;
@@ -22,6 +31,7 @@ app.put("/api/addArticle/:name", async (req, res) => {
 	try {
 		let result = await articleCollection.insertOne({
 			name,
+			title,
 			author,
 			comment,
 			upvote,
@@ -38,9 +48,16 @@ app.put("/api/articles/:name/upvote", async (req, res) => {
 	const increase = { $inc: { upvote: 1 } };
 	try {
 		await articleCollection.updateOne({ name: name }, increase);
-		res.send(`Upvoted article ${name}`);
+
+		const article = await articleCollection.findOne({ name: name });
+
+		if (article) {
+			res.json(article);
+		} else {
+			res.send("That article doesn't exist");
+		}
 	} catch (err) {
-		res.send(`Error Occured!! ${err}`);
+		res.sendStatus(500);
 	}
 });
 
@@ -53,7 +70,13 @@ app.post("/api/articles/:name/comment", async (req, res) => {
 			{ name },
 			{ $push: { comment: { postedBy, text } } }
 		);
-		res.send(`comment posted successfully by ${postedBy}`);
+
+		const article = await articleCollection.findOne({ name: name });
+		if (article) {
+			res.json(article);
+		} else {
+			res.send("That article doesn't exist");
+		}
 	} catch (err) {
 		res.send(`comment not posted ${err}`);
 	}
