@@ -1,8 +1,7 @@
 import { MongoClient } from "mongodb";
 
 //Connection uri for the mongoDB cluster
-const uri =
-	"mongodb+srv://rohanR:12345@cluster0.nabqojw.mongodb.net/?retryWrites=true&w=majority";
+const uri = `mongodb+srv://rohanR:12345@cluster0.nabqojw.mongodb.net/?retryWrites=true&w=majority`;
 const dbname = "blogverse"; //Name of the database
 const client = new MongoClient(uri);
 const articleCollection = client.db(dbname).collection("articles");
